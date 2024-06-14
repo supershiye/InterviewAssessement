@@ -1,4 +1,4 @@
-# Interview Assessment 001 - Ye Shi
+# Interview Assessment - Ye Shi
 
 This repository contains deliverables for an interview assessment of Ye Shi.
 
@@ -130,17 +130,20 @@ python3 -m venv /path/to/new/virtual/environment
 ## How to Set Up the Project
 
 1. Clone the repository to your local machine.
-2. Install the required packages by running:
+   ```sh
+   git clone https://github.com/supershiye/InterviewAssessement001.git
+   ```
+3. Install the required packages by running:
    ```sh
    pip install -r requirements.txt
    ```
    Note: I did not specify the version of the packages in the requirements.txt file. 
-3. Run the Flask app by running:
+4. Run the Flask app by running:
    ```sh
    python run.py
    ```
-4. The Flask app will be running on `http://127.0.0.1:5000/` by default.
-5. Note: The debug mode is set to `True` in the `run.py` file. Please change it to `False` in production.
+5. The Flask app will be running on `http://127.0.0.1:5000/` by default.
+6. Note: The debug mode is set to `True` in the `run.py` file. Please change it to `False` in production.
 
 ## How to Test the Project
 
