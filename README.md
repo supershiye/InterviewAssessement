@@ -131,27 +131,31 @@ python3 -m venv /path/to/new/virtual/environment
 
 1. Clone the repository to your local machine.
    ```sh
-   git clone https://github.com/supershiye/InterviewAssessement001.git
+   git clone https://github.com/supershiye/InterviewAssessement_YeShi.git
    ```
-3. Install the required packages by running:
+1. Install the required packages by running:
    ```sh
    pip install -r requirements.txt
    ```
-4. Run the Flask app by running:
+1. Navigate to the downloaded repository directory.
+   ```sh
+   cd /path/to/downloaded/folder/InterviewAssessement_YeShi
+   ```
+1. Run the Flask app by running:
    ```sh
    python run.py
    ```
-5. The Flask app will be running on `http://127.0.0.1:5000/` by default.
-6. Note: The debug mode is set to `True` in the `run.py` file. Please change it to `False` in production.
+1. The Flask app will be running on `http://127.0.0.1:5000/` by default.
+1. Note: The debug mode is set to `True` in the `run.py` file. Please change it to `False` in production.
 
 ## How to Test the Project
 
-1. Repeat steps 1 and 2 from the setup instructions to set up the project if you haven't already.
-2. Run the unit tests by running:
+1. Repeat steps 1 to 3 from the setup instructions to set up the project if you haven't already.
+1. Run the unit tests by running:
    ```sh
    pytest
    ```
-3. Tests are written in the `test_app.py` file.
+1. Tests are written in the `test_app.py` file.
 
 ## Usage of Git and Git Commands
 
