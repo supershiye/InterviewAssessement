@@ -1,5 +1,3 @@
-Sure, here's the formatted README file:
-
 # Interview Assessment 001 - Ye Shi
 
 This repository contains deliverables for an interview assessment of Ye Shi.
