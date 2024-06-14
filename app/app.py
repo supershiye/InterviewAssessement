@@ -55,7 +55,7 @@ def validate():
     input_data = request.get_json()["data"]
     if not input_data:
         return jsonify({
-            "status": "error",
+            "results": "failed",
             "message": "No data provided"}), 400
 
     errors = []
@@ -67,10 +67,60 @@ def validate():
 
     if not errors:
         return jsonify({
-            "status": "success",
+            "results": "success",
             "message": "Validation successful"}), 200
     else:
         return jsonify({
-            "status": "error",
-            "message": "Validation failed. The return data are invalid:",
-            "data": errors}), 400
+            "results": "failed",
+            "message": "Validation failed. The return errors are invalid data:",
+            "errors": errors}), 400
+    
+@main.route('/get_factors', methods=['POST'])
+def get_factors():
+    """
+    Factor Mapping:
+
+    Map the factors from the provided data.json file based on the input values.
+    
+    Retrieves factors based on input data.
+
+    Returns:
+        A JSON response containing the results.
+    """
+    input_data = request.get_json()["data"]
+
+    if not input_data:
+        return jsonify({
+            "results": "failed",
+            "message": "No data provided"}), 400
+
+    results = []
+
+    for item in input_data:
+        
+        # Initialize the result with NA values
+        result = {  "var_name": item["var_name"],
+                    "category": item["category"],
+                    "factor": "N/A"}
+        
+        for entry in data:
+            if item["var_name"] == entry["var_name"] and item["category"] == entry["category"]:
+                result = {
+                    "var_name": item["var_name"],
+                    "category": item["category"],
+                    "factor": entry["factor"]
+                }
+                break
+
+        results.append(result)
+                # edge case 1: if the category or var_name is not found in the data.json file, the loop will break and the result will not be appended
+                    # solved by appending the result to the results list after the loop
+                # edge case 2: if the category or var_name is found multiple times in the data.json file, the first match will be appended to the results
+                    # solved by checking for duplicates in the data.json file
+
+    if len(results) == len(input_data): # if the results list is the same length as the input data, return the results
+        return jsonify({"results": results}), 200
+    else:
+        return jsonify({
+            "results": results,
+            "message": "Some of the data are unavailable"}), 400
