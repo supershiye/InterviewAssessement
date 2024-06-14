@@ -14,7 +14,6 @@ project/
 ├── test_app.py            # Unit tests for the project
 ├── requirements.txt       # Python packages required for the project
 ├── README.md              # This file
-├── lead-mle-take-home.html# Assessment instruction
 ```
 
 ## Project Description
