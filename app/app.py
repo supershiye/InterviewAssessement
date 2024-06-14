@@ -53,12 +53,11 @@ def validate():
         otherwise returns a JSON response with an error message.
     """
     input_data = request.get_json()["data"]
+    errors = []
     if not input_data:
         return jsonify({
             "results": "failed",
             "message": "No data provided"}), 400
-
-    errors = []
 
     for item in input_data:
         is_valid = validate_a_sample(item)
@@ -91,7 +90,7 @@ def get_factors():
 
     if not input_data:
         return jsonify({
-            "results": "failed",
+            "results": [],
             "message": "No data provided"}), 400
 
     results = []
@@ -118,9 +117,5 @@ def get_factors():
                 # edge case 2: if the category or var_name is found multiple times in the data.json file, the first match will be appended to the results
                     # solved by checking for duplicates in the data.json file
 
-    if len(results) == len(input_data): # if the results list is the same length as the input data, return the results
-        return jsonify({"results": results}), 200
-    else:
-        return jsonify({
-            "results": results,
-            "message": "Some of the data are unavailable"}), 400
+
+    return jsonify({"results": results}), 200
