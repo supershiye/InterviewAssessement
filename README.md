@@ -137,7 +137,6 @@ python3 -m venv /path/to/new/virtual/environment
    ```sh
    pip install -r requirements.txt
    ```
-   Note: I did not specify the version of the packages in the requirements.txt file. 
 4. Run the Flask app by running:
    ```sh
    python run.py
