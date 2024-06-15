@@ -131,7 +131,7 @@ python3 -m venv /path/to/new/virtual/environment
 
 1. Clone the repository to your local machine.
    ```sh
-   git clone https://github.com/supershiye/InterviewAssessement_YeShi.git
+   git clone https://github.com/supershiye/InterviewAssessement.git
    ```
 1. Install the required packages by running:
    ```sh
@@ -139,7 +139,7 @@ python3 -m venv /path/to/new/virtual/environment
    ```
 1. Navigate to the downloaded repository directory.
    ```sh
-   cd /path/to/downloaded/folder/InterviewAssessement_YeShi
+   cd /path/to/downloaded/folder/InterviewAssessement
    ```
 1. Run the Flask app by running:
    ```sh
